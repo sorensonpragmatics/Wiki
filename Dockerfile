@@ -4,6 +4,7 @@ RUN gem install github-linguist
 RUN gem install gollum
 RUN gem install org-ruby  # optional
 WORKDIR /wiki
+RUN git init
 ENTRYPOINT ["gollum", "--port", "8080"]
 EXPOSE 8080
 
