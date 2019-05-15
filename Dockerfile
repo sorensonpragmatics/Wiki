@@ -3,8 +3,9 @@ RUN apt-get -y update && apt-get -y install libicu-dev cmake && rm -rf /var/lib/
 RUN gem install github-linguist
 RUN gem install gollum
 RUN gem install org-ruby  # optional
+RUN mkdir /wiki
 WORKDIR /wiki
-RUN git init
-ENTRYPOINT ["gollum", "--port", "8080"]
+COPY start.sh /wiki
+ENTRYPOINT ["/wiki/start.sh"]
 EXPOSE 8080
 
