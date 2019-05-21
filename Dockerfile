@@ -5,5 +5,6 @@ RUN gem install gollum
 RUN gem install org-ruby  # optional
 COPY start.sh /
 ENTRYPOINT ["/start.sh"]
+VOLUME /wiki
 EXPOSE 8080
 
